@@ -1,4 +1,6 @@
-# Kalshi Tennis: Testing Trading Ideas Against 14,000 Matches
+# OrderFlow
+
+**Testing trading ideas on Kalshi tennis markets against 14,000 matches and 34M trades.**
 
 I traded Kalshi's in-play tennis markets by hand and had a stretch where it looked like I'd found something. Before automating it, I wanted to know whether it was skill or variance. This repo tests that question, and the follow-up ideas, against the full market.
 

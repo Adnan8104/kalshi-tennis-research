@@ -29,7 +29,6 @@ BASES = ["https://api.elections.kalshi.com/trade-api/v2", "https://external-api.
 SERIES = ["KXITFMATCH", "KXITFWMATCH", "KXATPMATCH", "KXWTAMATCH", "KXATPCHALLENGERMATCH"]
 WINDOW_HOURS = 12      # candles pulled for the 12h before the market closed (pre-match + match)
 WORKERS = 4
-MKT_FILE, CANDLE_FILE = "bt_markets.csv", "bt_candles.csv"
 MKT_COLS = ["ticker", "event_ticker", "series", "title", "yes_sub_title", "close_time", "result", "rules_primary"]
 CANDLE_COLS = ["ticker", "end_ts", "bid", "ask", "price_close", "volume"]
 lock = threading.Lock()
@@ -134,7 +133,12 @@ def fetch_one(m, hist, series):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", default="2026-06-01")
+    ap.add_argument("--series", default=",".join(SERIES), help="comma-separated series tickers")
+    ap.add_argument("--prefix", default="bt", help="output file prefix, e.g. nba -> nba_markets.csv")
+    ap.add_argument("--max-events", type=int, default=0, help="keep only the N most recent matches per series (0 = all)")
     args = ap.parse_args()
+    MKT_FILE, CANDLE_FILE = f"{args.prefix}_markets.csv", f"{args.prefix}_candles.csv"
+    series_list = [x.strip() for x in args.series.split(",") if x.strip()]
     since_ts = int(datetime.fromisoformat(args.since).replace(tzinfo=timezone.utc).timestamp())
 
     done = set()
@@ -149,8 +153,10 @@ def main():
         mw.writeheader(); cw.writeheader()
 
     todo = []
-    for s in SERIES:
+    for s in series_list:
         ms = list_markets(s, since_ts)
+        if args.max_events:
+            ms = sorted(ms, key=lambda mh: mh[0].get("close_time", ""), reverse=True)[:args.max_events]
         left = [(m, h, s) for m, h in ms if m["ticker"] not in done]
         print(f"{s}: {len(ms)} settled matches since {args.since}, {len(left)} still to download")
         todo.extend(left)

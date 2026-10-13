@@ -21,7 +21,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 BASES = ["https://api.elections.kalshi.com/trade-api/v2", "https://external-api.kalshi.com/trade-api/v2"]
 WORKERS = 4
-TRADE_FILE, INC_FILE, DONE_FILE = "bt_trades.csv", "bt_incentives.csv", "bt_trades_done.txt"
 TRADE_COLS = ["ticker", "created_time", "yes_price", "count", "taker_outcome_side", "taker_book_side", "taker_side"]
 lock = threading.Lock()
 
@@ -84,8 +83,17 @@ def trades_for(ticker):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--prefix", default="bt")
+    ap.add_argument("--skip-rewards", action="store_true")
+    a = ap.parse_args()
+    TRADE_FILE, DONE_FILE = f"{a.prefix}_trades.csv", f"{a.prefix}_trades_done.txt"
+    INC_FILE = "bt_incentives.csv"
     # 1) reward programs
     try:
+        if a.skip_rewards:
+            raise RuntimeError("skipped (--skip-rewards)")
         progs = list(pages("/incentive_programs", {"status": "all", "type": "liquidity", "limit": 10000}, "incentive_programs"))
         if progs:
             keys = sorted({k for p in progs for k in p})
@@ -96,7 +104,7 @@ def main():
         print(f"reward programs failed: {e}")
 
     # 2) trades
-    with open("bt_markets.csv", newline="") as f:
+    with open(f"{a.prefix}_markets.csv", newline="") as f:
         tickers = [r["ticker"] for r in csv.DictReader(f)]
     done = set(open(DONE_FILE).read().split()) if os.path.exists(DONE_FILE) else set()
     todo = [t for t in tickers if t not in done]

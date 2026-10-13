@@ -86,7 +86,7 @@ for chunk in pd.read_csv(trades_path, chunksize=2_000_000,
         vals.append(sgn * (res[t] - p))
         vals.append(0.0175 * p * (1 - p))  # maker fee where charged (25% of taker)
         vals = [np.where(valid, v, np.nan) for v in vals]
-        tour = TOUR.get(t.split("-")[0], "other")
+        tour = TOUR.get(t.split("-")[0], t.split("-")[0])
         phase = np.where(start is None, "unknown", np.where(tt < (start or 0), "pre-match", "in-play"))
         pb = np.digitize(p, [0.1, 0.25, 0.5, 0.75, 0.9])
         pb_lbl = np.array(["<10c", "10-25c", "25-50c", "50-75c", "75-90c", ">90c"])[pb]
