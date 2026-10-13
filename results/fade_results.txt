@@ -1,0 +1,112 @@
+matches usable: 12793  date range: 2026-08-05 to 2026-10-13
+roi = return per $ staked, held to settlement unless tp. CI/P(>0) = match-level bootstrap on taker roi.
+maker* assumes you get filled at the bid with no fee: optimistic upper bound.
+
+                       variant  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       baseline random in-play   16357    11020 0.384      0.399     -0.167 -0.186 -0.147    0.0      -0.065
+   knife drop>=15c cap65 min20    8498     6989 0.387      0.399     -0.067 -0.090 -0.045    0.0       0.025
+         knife drop>=15c cap80   13519    10274 0.331      0.344     -0.098 -0.124 -0.070    0.0       0.028
+       settled drop>=10c cap80   11704     9807 0.322      0.330     -0.114 -0.146 -0.081    0.0       0.024
+ settled drop>=15c cap65 min20    7680     6806 0.370      0.381     -0.075 -0.102 -0.048    0.0       0.024
+       settled drop>=15c cap80   10540     9181 0.303      0.312     -0.115 -0.150 -0.081    0.0       0.026
+settled drop>=15c cap80 tp+10c   10540     9181 0.591      0.312     -0.168 -0.183 -0.151    0.0      -0.031
+       settled drop>=15c cap95   10479     9126 0.302      0.311     -0.116 -0.150 -0.080    0.0       0.026
+       settled drop>=20c cap80    9128     8192 0.297      0.306     -0.107 -0.143 -0.070    0.0       0.030
+       settled drop>=25c cap80    7650     7106 0.288      0.298     -0.109 -0.151 -0.067    0.0       0.033
+
+===== 1 train Jun-Aug | M =====
+                       variant  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       baseline random in-play    3976     2688 0.377      0.398     -0.178 -0.215 -0.139  0.000      -0.081
+   knife drop>=15c cap65 min20    2086     1729 0.391      0.395     -0.055 -0.098 -0.011  0.007       0.038
+         knife drop>=15c cap80    3317     2510 0.326      0.333     -0.062 -0.118 -0.006  0.016       0.073
+       settled drop>=10c cap80    2905     2424 0.309      0.315     -0.115 -0.179 -0.047  0.001       0.031
+ settled drop>=15c cap65 min20    1913     1690 0.369      0.371     -0.055 -0.114  0.002  0.029       0.047
+       settled drop>=15c cap80    2633     2286 0.295      0.296     -0.081 -0.154 -0.006  0.016       0.082
+settled drop>=15c cap80 tp+10c    2633     2286 0.580      0.296     -0.169 -0.201 -0.138  0.000      -0.029
+       settled drop>=15c cap95    2627     2282 0.295      0.296     -0.083 -0.160 -0.014  0.010       0.080
+       settled drop>=20c cap80    2304     2066 0.287      0.291     -0.126 -0.197 -0.051  0.001       0.008
+       settled drop>=25c cap80    1915     1772 0.277      0.284     -0.123 -0.207 -0.036  0.003       0.013
+
+===== 1 train Jun-Aug | W =====
+                       variant  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       baseline random in-play    2243     1515 0.391      0.402     -0.134 -0.190 -0.074  0.000      -0.024
+   knife drop>=15c cap65 min20    1276     1005 0.397      0.395     -0.010 -0.066  0.043  0.353       0.087
+         knife drop>=15c cap80    1932     1427 0.335      0.345     -0.091 -0.150 -0.030  0.001       0.021
+       settled drop>=10c cap80    1632     1361 0.331      0.332     -0.121 -0.194 -0.046  0.001      -0.002
+ settled drop>=15c cap65 min20    1133      990 0.369      0.379     -0.048 -0.119  0.023  0.098       0.050
+       settled drop>=15c cap80    1495     1281 0.308      0.314     -0.106 -0.194 -0.011  0.016       0.018
+settled drop>=15c cap80 tp+10c    1495     1281 0.599      0.314     -0.165 -0.206 -0.124  0.000      -0.027
+       settled drop>=15c cap95    1489     1276 0.308      0.313     -0.104 -0.187 -0.013  0.013       0.020
+       settled drop>=20c cap80    1308     1149 0.304      0.307     -0.077 -0.165  0.022  0.059       0.056
+       settled drop>=25c cap80    1128     1037 0.290      0.295     -0.077 -0.177  0.029  0.078       0.084
+
+===== 2 test Sep-Oct | M =====
+                       variant  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       baseline random in-play    6271     4178 0.390      0.402     -0.168 -0.198 -0.136  0.000      -0.070
+   knife drop>=15c cap65 min20    3169     2638 0.380      0.397     -0.084 -0.121 -0.048  0.000       0.009
+         knife drop>=15c cap80    5075     3902 0.324      0.341     -0.122 -0.161 -0.082  0.000      -0.004
+       settled drop>=10c cap80    4423     3700 0.324      0.330     -0.112 -0.162 -0.061  0.000       0.014
+ settled drop>=15c cap65 min20    2845     2553 0.367      0.379     -0.078 -0.123 -0.030  0.000       0.021
+       settled drop>=15c cap80    3931     3457 0.303      0.311     -0.124 -0.180 -0.066  0.000       0.011
+settled drop>=15c cap80 tp+10c    3931     3457 0.586      0.311     -0.178 -0.202 -0.153  0.000      -0.043
+       settled drop>=15c cap95    3907     3434 0.302      0.310     -0.124 -0.178 -0.067  0.000       0.012
+       settled drop>=20c cap80    3385     3064 0.294      0.304     -0.100 -0.162 -0.035  0.001       0.040
+       settled drop>=25c cap80    2818     2635 0.291      0.299     -0.099 -0.166 -0.029  0.003       0.039
+
+===== 2 test Sep-Oct | W =====
+                       variant  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       baseline random in-play    3867     2639 0.379      0.393     -0.173 -0.214 -0.130  0.000      -0.063
+   knife drop>=15c cap65 min20    1967     1617 0.388      0.408     -0.090 -0.134 -0.046  0.000      -0.000
+         knife drop>=15c cap80    3195     2435 0.343      0.359     -0.100 -0.154 -0.048  0.000       0.037
+       settled drop>=10c cap80    2744     2322 0.326      0.344     -0.111 -0.182 -0.038  0.001       0.046
+ settled drop>=15c cap65 min20    1789     1573 0.376      0.395     -0.109 -0.161 -0.055  0.000      -0.014
+       settled drop>=15c cap80    2481     2157 0.309      0.329     -0.143 -0.209 -0.070  0.000      -0.003
+settled drop>=15c cap80 tp+10c    2481     2157 0.608      0.329     -0.151 -0.185 -0.117  0.000      -0.014
+       settled drop>=15c cap95    2456     2134 0.305      0.327     -0.145 -0.216 -0.072  0.000      -0.004
+       settled drop>=20c cap80    2131     1913 0.308      0.326     -0.115 -0.190 -0.034  0.004       0.022
+       settled drop>=25c cap80    1789     1662 0.295      0.314     -0.131 -0.216 -0.038  0.003       0.014
+
+--- main rule (settled, 15c, cap 80c) by month ---
+  month  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+2026-08    4128     3567 0.300      0.302     -0.090 -0.146 -0.033  0.002       0.059
+2026-09    4633     4056 0.308      0.317     -0.134 -0.184 -0.081  0.000       0.002
+2026-10    1779     1558 0.299      0.321     -0.125 -0.209 -0.037  0.003       0.016
+
+--- main rule (settled, 15c, cap 80c) by gender ---
+gender  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+     M    6564     5743 0.300      0.305     -0.107 -0.151 -0.062    0.0       0.040
+     W    3976     3438 0.309      0.323     -0.129 -0.185 -0.070    0.0       0.005
+
+--- main rule (settled, 15c, cap 80c) by level ---
+     level  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+       ATP     672      581 0.274      0.290     -0.130 -0.257  0.007  0.032      -0.005
+Challenger    2057     1788 0.290      0.289     -0.078 -0.159  0.004  0.030       0.059
+ ITF other      40       38 0.175      0.206     -0.559 -0.850 -0.203  0.001      -0.464
+       M15    2303     2027 0.303      0.318     -0.130 -0.205 -0.056  0.000       0.038
+       M25    1493     1310 0.325      0.318     -0.088 -0.182  0.005  0.031       0.049
+      W100      74       63 0.311      0.320     -0.115 -0.413  0.220  0.231       0.014
+       W15    1327     1153 0.310      0.333     -0.141 -0.233 -0.043  0.001       0.012
+       W35     982      834 0.313      0.320     -0.092 -0.203  0.022  0.059       0.043
+       W50     657      577 0.312      0.336     -0.165 -0.287 -0.026  0.009      -0.049
+       W75     289      250 0.315      0.305     -0.077 -0.261  0.118  0.217       0.037
+       WTA     646      560 0.293      0.301     -0.151 -0.274 -0.024  0.013      -0.030
+
+--- main rule (settled, 15c, cap 80c) by pre_role ---
+                        pre_role  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+dropped player was pre-match dog    5473     5473 0.157      0.167     -0.164 -0.226 -0.097    0.0       0.030
+dropped player was pre-match fav    5067     5055 0.461      0.468     -0.063 -0.097 -0.027    0.0       0.023
+
+--- main rule (settled, 15c, cap 80c) by entry_bucket ---
+entry_bucket  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+  (0.0, 0.2]    4110     4079 0.109      0.119     -0.192 -0.273 -0.109  0.000       0.035
+ (0.2, 0.35]    2569     2465 0.264      0.275     -0.094 -0.152 -0.036  0.002       0.022
+ (0.35, 0.5]    1746     1720 0.406      0.426     -0.088 -0.141 -0.034  0.000      -0.005
+ (0.5, 0.65]    1266     1266 0.582      0.576     -0.019 -0.065  0.027  0.222       0.046
+ (0.65, 0.8]     849      849 0.737      0.730     -0.012 -0.054  0.028  0.282       0.034
+
+--- main rule (settled, 15c, cap 80c) by when ---
+  when  trades  matches  win%  avg_entry  roi_taker  CI_lo  CI_hi  P(>0)  roi_maker*
+ 0-30m    2716     2716 0.350      0.365     -0.124 -0.187 -0.061  0.000      -0.006
+30-60m    4613     4604 0.290      0.295     -0.110 -0.166 -0.053  0.000       0.035
+60-90m    1796     1792 0.252      0.264     -0.095 -0.201  0.012  0.042       0.083
+  90m+    1415     1375 0.323      0.325     -0.142 -0.235 -0.038  0.003      -0.012

@@ -1,0 +1,16 @@
+# data (download with pipeline/ scripts)
+*.csv
+*.csv.gz
+*.pkl
+*.parquet
+data/
+# secrets
+.env
+*.pem
+*.key
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store

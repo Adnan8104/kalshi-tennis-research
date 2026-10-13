@@ -1,0 +1,27 @@
+mid move = how far the fair price moved after entry (cents/100). Positive = bounced.
+taker tpX = buy at ask, sell at bid when +X over cost or after 30 min, fees both ways.
+maker tpX* = buy at bid, sell at bid+X via resting order, else dump at bid after 30 min. Optimistic.
+
+   mode  period  trades  avg_ask  avg spread  mid move +5m  mid move +15m  mid move +30m
+  knife     Aug    3842    0.428       0.017        -0.003         -0.005         -0.004
+  knife Sep-Oct    6012    0.442       0.018        -0.001         -0.004         -0.004
+ random     Aug    4542    0.502       0.017         0.000          0.001          0.001
+ random Sep-Oct    7283    0.501       0.017         0.000         -0.000         -0.001
+settled     Aug    3375    0.455       0.017         0.003          0.002          0.003
+settled Sep-Oct    5269    0.463       0.017         0.000         -0.002         -0.000
+
+   mode  period  tp3 hit%  taker tp3c roi  tp5 hit%  taker tp5c roi  tp10 hit%  taker tp10c roi
+  knife     Aug     0.698          -0.135     0.631          -0.134      0.499           -0.131
+  knife Sep-Oct     0.687          -0.135     0.622          -0.133      0.508           -0.122
+ random     Aug     0.710          -0.128     0.646          -0.130      0.522           -0.125
+ random Sep-Oct     0.720          -0.133     0.659          -0.132      0.535           -0.130
+settled     Aug     0.740          -0.112     0.675          -0.112      0.543           -0.109
+settled Sep-Oct     0.734          -0.122     0.671          -0.120      0.541           -0.124
+
+   mode  period  maker tp3c roi*  maker tp5c roi*  maker tp10c roi*
+  knife     Aug           -0.031           -0.024            -0.027
+  knife Sep-Oct           -0.029           -0.027            -0.024
+ random     Aug           -0.035           -0.037            -0.043
+ random Sep-Oct           -0.036           -0.039            -0.047
+settled     Aug           -0.015           -0.012            -0.014
+settled Sep-Oct           -0.024           -0.025            -0.028

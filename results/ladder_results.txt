@@ -1,0 +1,43 @@
+                       trades  avg_entry  hit_rate  fair_hit  roi_after_fees
+ladder                                                                      
+buy ~20c, sell at 40c   13194      0.206     0.426     0.515          -0.196
+buy ~20c, sell at 45c   13194      0.206     0.374     0.458          -0.198
+buy ~30c, sell at 50c   13638      0.302     0.522     0.604          -0.158
+buy ~45c, sell at 65c   13601      0.450     0.627     0.693          -0.108
+buy ~60c, sell at 80c   13637      0.599     0.708     0.749          -0.061
+
+                               trades  hit_rate  fair_hit    roi
+ladder                period                                    
+buy ~20c, sell at 40c Aug        5039     0.432     0.515 -0.188
+                      Sep-Oct    8155     0.423     0.515 -0.201
+buy ~20c, sell at 45c Aug        5039     0.382     0.458 -0.183
+                      Sep-Oct    8155     0.370     0.458 -0.207
+buy ~30c, sell at 50c Aug        5253     0.528     0.605 -0.149
+                      Sep-Oct    8385     0.518     0.604 -0.164
+buy ~45c, sell at 65c Aug        5290     0.629     0.693 -0.106
+                      Sep-Oct    8311     0.625     0.693 -0.110
+buy ~60c, sell at 80c Aug        5278     0.712     0.749 -0.056
+                      Sep-Oct    8359     0.705     0.749 -0.064
+
+                                 trades  hit_rate  fair_hit    roi
+ladder                tour                                        
+buy ~20c, sell at 40c ATP+Chall    3278     0.436     0.517 -0.176
+                      ITF men      4845     0.414     0.514 -0.216
+                      ITF women    4232     0.430     0.515 -0.192
+                      WTA           839     0.439     0.516 -0.178
+buy ~20c, sell at 45c ATP+Chall    3278     0.384     0.459 -0.174
+                      ITF men      4845     0.363     0.457 -0.221
+                      ITF women    4232     0.378     0.458 -0.192
+                      WTA           839     0.381     0.459 -0.190
+buy ~30c, sell at 50c ATP+Chall    3550     0.521     0.606 -0.159
+                      ITF men      4845     0.509     0.604 -0.176
+                      ITF women    4347     0.533     0.604 -0.139
+                      WTA           896     0.532     0.603 -0.147
+buy ~45c, sell at 65c ATP+Chall    3665     0.625     0.692 -0.110
+                      ITF men      4678     0.617     0.693 -0.118
+                      ITF women    4356     0.636     0.694 -0.098
+                      WTA           902     0.640     0.692 -0.098
+buy ~60c, sell at 80c ATP+Chall    3689     0.713     0.749 -0.051
+                      ITF men      4682     0.707     0.749 -0.059
+                      ITF women    4362     0.703     0.750 -0.072
+                      WTA           904     0.716     0.749 -0.054
